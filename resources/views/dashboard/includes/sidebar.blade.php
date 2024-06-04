@@ -99,8 +99,25 @@
         </div>
     </li>
 
-    {{-- Shipping --}}
+    {{-- Settings --}}
     <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#shippingCollapse" aria-expanded="true" aria-controls="shippingCollapse">
+          <i class="fas fa-truck"></i>
+          <span>Settings</span>
+        </a>
+        <ul class="menu-content">
+          <div id="shippingCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+              <h6 class="collapse-header">Shipping Methods:</h6>
+              <a class="collapse-item" href="{{--route('shipping.index')--}}">Shipping</a>
+              <a class="collapse-item" href="{{--route('shipping.create')---}}">Add Shipping</a>
+            </div>
+          </div>
+        </ul>
+    </li>
+
+    {{-- Shipping --}}
+    {{-- <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#shippingCollapse" aria-expanded="true" aria-controls="shippingCollapse">
           <i class="fas fa-truck"></i>
           <span>Shipping</span>
@@ -108,11 +125,11 @@
         <div id="shippingCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Shipping Options:</h6>
-            <a class="collapse-item" href="{{--route('shipping.index')--}}">Shipping</a>
-            <a class="collapse-item" href="{{--route('shipping.create')---}}">Add Shipping</a>
+            <a class="collapse-item" href="{{route('shipping.index')}}">Shipping</a>
+            <a class="collapse-item" href="{{route('shipping.create')}}">Add Shipping</a>
           </div>
         </div>
-    </li>
+    </li> --}}
 
     <!--Orders -->
     <li class="nav-item">

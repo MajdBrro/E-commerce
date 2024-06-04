@@ -5,7 +5,7 @@ Admin Dashboard
 @endsection
 @section('content')
 <div class="container-fluid">
-    {{-- @include('backend.layouts.notification') --}}
+    @include('dashboard.includes.notification')
     <!-- Page Heading -->
     <!-- Visit 'codeastro' for more projects -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
