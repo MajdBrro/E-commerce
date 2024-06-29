@@ -103,14 +103,15 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#shippingCollapse" aria-expanded="true" aria-controls="shippingCollapse">
           <i class="fas fa-truck"></i>
-          <span>Settings</span>
+          <span>{{__('admin/sidebar.settings')}}</span>
         </a>
         <ul class="menu-content">
           <div id="shippingCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-              <h6 class="collapse-header">Shipping Methods:</h6>
-              <a class="collapse-item" href="{{--route('shipping.index')--}}">Shipping</a>
-              <a class="collapse-item" href="{{--route('shipping.create')---}}">Add Shipping</a>
+              <h6 class="collapse-header">{{__('admin/sidebar.shipping methods')}}</h6>
+              <a class="collapse-item" href="{{route('edit.shipping.methods', 'free')}}">{{__('admin/sidebar.free shipping')}}</a>
+              <a class="collapse-item" href="{{route('edit.shipping.methods', 'local')}}">{{__('admin/sidebar.local shipping')}}</a>
+              <a class="collapse-item" href="{{route('edit.shipping.methods', 'external')}}">{{__('admin/sidebar.external shipping')}}</a>
             </div>
           </div>
         </ul>
