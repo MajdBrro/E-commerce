@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="loading" lang="{{ app() -> getLocale() === 'ar' ? 'ar' : 'en'}}" data-textdirection="{{ app() -> getLocale() === 'ar' ? 'rtl' : 'ltr'}}">
 
 <head>
 
