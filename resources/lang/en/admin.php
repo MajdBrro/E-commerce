@@ -15,6 +15,7 @@ return [
 
     'dashboard' => 'dashboard',
     'settings' => 'settings',
+    'profile' => 'profile',
     'shipping-methods' => 'Shipping Methods',
     'free-shipping' =>'free shipping',
     'local-shipping' =>'local shipping',
@@ -37,6 +38,7 @@ return [
     'Hello' =>'Hello',
     'Logout' => 'Logout',
     'change_language' => 'change language',
+    'change_password' => ' change_password',
     'available' => 'available',
     'un_available' => 'un available',
     'edit' => 'edit',

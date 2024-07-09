@@ -25,6 +25,8 @@ Route::group(
             return 'welcome to admin';
         });
         route::get('dashboard','DashboardController@index') -> name('admin.dashboard');
+        Route::post('logout','LoginController@logout')-> name('admin.logout');
+
         ############################# Settings Routes ############################################################
         route::group(['prefix'=>'settings'],function(){
             Route::get('shipping-methods/{type}','SettingsController@editShippingMethods')-> name('edit.shipping.methods');
