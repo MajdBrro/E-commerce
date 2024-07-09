@@ -14,6 +14,7 @@ return [
     */
     'dashboard' => 'لوحة التحكم',
     'settings' => 'الإعدادات',
+    'profile' => 'الملف الشخصي',
     'shipping-methods' => 'وسائل التوصيل',
     'free-shipping' =>'التوصيل المجاني',
     'local-shipping' =>'التوصيل الداخلي',
@@ -42,6 +43,7 @@ return [
     'Hello' =>'مرحباً',
     'Logout' => 'تسجيل الخروج',
     'change_language' => 'تغيير اللغة',
+    'change_password' => ' تغيير كلمة المرور',
     'available' => 'مفعل',
     'un_available' => 'غير مفعل',
     'edit' => 'تعديل',

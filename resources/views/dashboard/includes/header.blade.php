@@ -28,6 +28,20 @@
           </form>
         </div>
       </li>
+    {{-- Change Language buttom --}}
+      <li class="dropdown dropdown-user nav-item">
+        <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
+        <span class="mr-1">{{  LaravelLocalization::setLocale() }}</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right">
+            @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+            <a class="dropdown-item"rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                {{ $properties['native'] }}
+            </a>
+            @endforeach
+        </div>
+     </li>
+    {{-- Change Language buttom --}}
 
       {{-- Home page --}}
       <li class="nav-item dropdown no-arrow mx-1">
@@ -52,9 +66,9 @@
       <!-- Visit 'codeastro' for more projects -->
       <li class="nav-item dropdown no-arrow">
         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{--Auth()->user()->name--}}</span>
-          {{-- @if(Auth()->user()->photo) --}}
-            <img class="img-profile rounded-circle" src="{{--Auth()->user()->photo--}}">
+          <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{Auth('admin')->user()->name}}</span>
+          {{-- @if(Auth()->user()->photo) }}
+            <img class="img-profile rounded-circle" src="{{Auth()->user()->photo}}">
           {{-- @else --}}
             <img class="img-profile rounded-circle" src="{{asset('backend/img/avatar.png')}}">
           {{-- @endif --}}
@@ -63,24 +77,24 @@
         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
           <a class="dropdown-item" href="{{--route('admin-profile')--}}">
             <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-            Profile
+            {{__('admin.profile')}}
           </a>
           <a class="dropdown-item" href="{{--route('change.password.form')--}}">
             <i class="fas fa-key fa-sm fa-fw mr-2 text-gray-400"></i>
-            Change Password
+            {{__('admin.change_password')}}
           </a>
           <a class="dropdown-item" href="{{--route('settings')--}}">
             <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-            Settings
+            {{__('admin.settings')}}
           </a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="{{-- route('logout') --}}"
                 onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
-                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Logout {{-- __('Logout') --}}
+                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> {{__('admin.Logout')}}
             </a>
 
-            <form id="logout-form" action="{{-- route('logout') --}}" method="POST" style="display: none;">
+            <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
                 @csrf
             </form>
         </div>
