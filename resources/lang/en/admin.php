@@ -40,7 +40,7 @@ return [
     'change_language' => 'change language',
     'change_password' => ' change_password',
     'available' => 'available',
-    'un_available' => 'un available',
+    'un_available' => 'Not available',
     'edit' => 'edit',
     'delete' => 'delete',
     'it_was_deleted_successfully' => 'it was deleted successfully',

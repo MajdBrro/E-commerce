@@ -33,6 +33,28 @@ Route::group(
             Route::post('shipping-methods/{id}','SettingsController@updateShippingMethods')-> name('update.shippings.methods');
         });
         ############################# Settings Routes ############################################################
+        ############################# Categories Routes ############################################################
+        route::group(['prefix'=>'main_categories'],function(){
+            Route::get('/','MainCategoriesController@index')-> name('admin.maincategories');
+            Route::get('edit/{id}','MainCategoriesController@edit')-> name('admin.maincategories.edit');
+            Route::patch('update/{id}','MainCategoriesController@update')-> name('admin.maincategories.update');
+            Route::get('create','MainCategoriesController@create')-> name('admin.maincategories.create');
+            Route::patch('store','MainCategoriesController@store')-> name('admin.maincategories.store');
+            Route::get('delete/{id}','MainCategoriesController@delete')-> name('admin.maincategories.delete');
+        });
+
+        ############################# Categories Routes ############################################################
+        ############################# SubCategories Routes ############################################################
+        // route::group(['prefix'=>'Sub_categories'],function(){
+        //     route::post('/','SubCategoriesController@index')->name('admin.subcategories');
+        //     route::post('create','SubCategoriesController@create')->name('admin.subcategories.create');
+        //     route::post('store','SubCategoriesController@store')->name('admin.subcategories.store');
+        //     route::post('edit/{id}','SubCategoriesController@edit')->name('admin.subcategories.edit');
+        //     route::post('update/{id}','SubCategoriesController@update')->name('admin.subcategories.update');
+        //     route::post('delete/{id}','SubCategoriesController@delete')->name('admin.subcategories.delete');
+        // });
+
+        ############################# SubCategories Routes ############################################################
     });
 
     Route::group(['namespace'=>'App\Http\Controllers\Dashboard','middleware'=>'guest:admin', 'prefix'=>'admin'],function(){

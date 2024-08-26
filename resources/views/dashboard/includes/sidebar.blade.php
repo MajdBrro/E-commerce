@@ -56,19 +56,35 @@
         </div>
 
     <!-- Categories -->
+    <!-- Category -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#categoryCollapse" aria-expanded="true" aria-controls="categoryCollapse">
-          <i class="fas fa-sitemap"></i>
-          <span>Category</span>
-        </a>
-        <div id="categoryCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Category Options:</h6>
-            <a class="collapse-item" href="{{--route('category.index')--}}">Category</a>
-            <a class="collapse-item" href="{{--route('category.create')--}}">Add Category</a>
-          </div>
+      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#postCategoryCollapse" aria-expanded="true" aria-controls="postCategoryCollapse">
+        <i class="fas fa-sitemap fa-folder"></i>
+        <span>Category</span>
+      </a>
+      <div id="postCategoryCollapse" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+          <h6 class="collapse-header">Category Options:</h6>
+          <a class="collapse-item" href="{{route('admin.maincategories')}}">Category</a>
+          <a class="collapse-item" href="{{route('admin.maincategories.create')}}">Add Category</a>
         </div>
-    </li>
+      </div>
+  </li>
+  <!-- SubCategory -->
+
+  <li class="nav-item">
+      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#postCategoryCollapse" aria-expanded="true" aria-controls="postCategoryCollapse">
+        <i class="fas fa-sitemap fa-folder"></i>
+        <span>SubCategory</span>
+      </a>
+      <div id="postCategoryCollapse" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+          <h6 class="collapse-header">Sub Category Options:</h6>
+          <a class="collapse-item" href="{{--route('post-category.index')--}}">SubCategory</a>
+          <a class="collapse-item" href="{{--route('post-category.create')--}}">Add SubCategory</a>
+        </div>
+      </div>
+  </li>
     {{-- Products --}}
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#productCollapse" aria-expanded="true" aria-controls="productCollapse">
@@ -171,21 +187,22 @@
         </div>
       </div>
     </li>
-
-     <!-- Category -->
-     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#postCategoryCollapse" aria-expanded="true" aria-controls="postCategoryCollapse">
-          <i class="fas fa-sitemap fa-folder"></i>
-          <span>Category</span>
-        </a>
-        <div id="postCategoryCollapse" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Category Options:</h6>
-            <a class="collapse-item" href="{{--route('post-category.index')--}}">Category</a>
-            <a class="collapse-item" href="{{--route('post-category.create')--}}">Add Category</a>
-          </div>
+    <!-- Categories -->
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#categoryCollapse" aria-expanded="true" aria-controls="categoryCollapse">
+        <i class="fas fa-sitemap"></i>
+        <span>Category</span>
+      </a>
+      <div id="categoryCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+          <h6 class="collapse-header">Category Options:</h6>
+          <a class="collapse-item" href="{{--route('category.index')--}}">Category</a>
+          <a class="collapse-item" href="{{--route('category.create')--}}">Add Category</a>
         </div>
-      </li>
+      </div>
+  </li>
+
+
 
       <!-- Tags -->
     <li class="nav-item">
