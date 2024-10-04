@@ -20,7 +20,7 @@ Route::group(
         'prefix' => LaravelLocalization::setLocale(),
         'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
     ], function(){
-    Route::group(['namespace'=>'App\Http\Controllers\Dashboard','middleware'=>'auth:admin', 'prefix'=>'admin'],function(){
+    Route::group(['namespace'=>'App\Http\Controllers\Dashboard'/*,'middleware'=>'auth:admin'*/, 'prefix'=>'admin'],function(){
         route::get('/',function(){
             return 'welcome to admin';
         });
@@ -40,7 +40,7 @@ Route::group(
             Route::patch('update/{id}','MainCategoriesController@update')-> name('admin.maincategories.update');
             Route::get('create','MainCategoriesController@create')-> name('admin.maincategories.create');
             Route::patch('store','MainCategoriesController@store')-> name('admin.maincategories.store');
-            Route::get('delete/{id}','MainCategoriesController@delete')-> name('admin.maincategories.delete');
+            Route::put('delete/{id}','MainCategoriesController@delete')-> name('admin.maincategories.delete');
         });
 
         ############################# Categories Routes ############################################################
@@ -55,6 +55,16 @@ Route::group(
         // });
 
         ############################# SubCategories Routes ############################################################
+         ################################## Brands routes ######################################
+         Route::group(['prefix' => 'brands', 'Middleware'=> 'can:brands'], function () {
+            Route::get('/', 'BrandsController@index')->name('admin.brands');
+            Route::get('create', 'BrandsController@create')->name('admin.brands.create');
+            Route::PUT('store', 'BrandsController@store')->name('admin.brands.store');
+            Route::get('edit/{id}', 'BrandsController@edit')->name('admin.brands.edit');
+            Route::PUT('update/{id}', 'BrandsController@update')->name('admin.brands.update');
+            Route::get('delete/{id}', 'BrandsController@delete')->name('admin.brands.delete');
+        });
+        ################################## end Brands    #######################################
     });
 
     Route::group(['namespace'=>'App\Http\Controllers\Dashboard','middleware'=>'guest:admin', 'prefix'=>'admin'],function(){

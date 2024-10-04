@@ -46,7 +46,6 @@ edit Categories
           <select name="parent_id" class="form-control">
               <option value="">--Select any category--</option>
               @foreach($parent_cats as $parent_cat)
-
                   <option value='{{$parent_cat->id}}' {{(($parent_cat->id==$category->parent_id) ? 'selected' : '')}}>{{$parent_cat->name}}</option>
               @endforeach
           </select>

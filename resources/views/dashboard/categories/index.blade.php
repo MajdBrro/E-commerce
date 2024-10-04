@@ -24,7 +24,6 @@ main Categories
                 <th>Main Category </th>
                 <th>Slug </th>
                 <th>Status</th>
-                <th>Image</th>
                 <th>Action</th>
             </tr>
           </thead>
@@ -44,7 +43,7 @@ main Categories
                             <span class="badge badge-danger">{{ __('admin.un_available')}}</span>
                         @endif
                     </td>
-                    <td> <img style="width: 150px; height: 100px;" src=" "></td>
+                    {{-- <td> <img style="width: 150px; height: 100px;" src=" "></td> --}}
                     {{-- <td>
                         @if($category->photo)
                             <img src="{{$category->photo}}" class="img-fluid" style="max-width:80px" alt="{{$category->photo}}">
@@ -56,8 +55,8 @@ main Categories
                     <a href="{{route('admin.maincategories.edit',$category->id)}}" class="btn btn-primary btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" title="edit" data-placement="bottom"><i class="fas fa-edit"></i></a>
                     <form method="POST" action="{{route('admin.maincategories.delete',$category->id)}}">
                       @csrf
-                      @method('delete')
-                          <button class="btn btn-danger btn-sm dltBtn" data-id={{$category->id}} style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class="fas fa-trash-alt"></i></button>
+                      @method('PUT')
+                        <button class="btn btn-danger btn-sm dltBtn" data-id={{$category->id}} style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class="fas fa-trash-alt"></i></button>
                     </form>
                     </td>
                 </tr>
