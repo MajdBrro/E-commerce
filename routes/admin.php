@@ -36,11 +36,11 @@ Route::group(
         ############################# Categories Routes ############################################################
         route::group(['prefix'=>'main_categories'],function(){
             Route::get('/','MainCategoriesController@index')-> name('admin.maincategories');
-            Route::get('edit/{id}','MainCategoriesController@edit')-> name('admin.maincategories.edit');
-            Route::patch('update/{id}','MainCategoriesController@update')-> name('admin.maincategories.update');
             Route::get('create','MainCategoriesController@create')-> name('admin.maincategories.create');
-            Route::patch('store','MainCategoriesController@store')-> name('admin.maincategories.store');
-            Route::put('delete/{id}','MainCategoriesController@delete')-> name('admin.maincategories.delete');
+            Route::put('store','MainCategoriesController@store')-> name('admin.maincategories.store');
+            Route::get('edit/{id}','MainCategoriesController@edit')-> name('admin.maincategories.edit');
+            Route::put('update/{id}','MainCategoriesController@update')-> name('admin.maincategories.update');
+            Route::delete('delete/{id}','MainCategoriesController@delete')-> name('admin.maincategories.delete');
         });
 
         ############################# Categories Routes ############################################################
@@ -59,12 +59,23 @@ Route::group(
          Route::group(['prefix' => 'brands', 'Middleware'=> 'can:brands'], function () {
             Route::get('/', 'BrandsController@index')->name('admin.brands');
             Route::get('create', 'BrandsController@create')->name('admin.brands.create');
-            Route::PUT('store', 'BrandsController@store')->name('admin.brands.store');
+            Route::put('store', 'BrandsController@store')->name('admin.brands.store');
             Route::get('edit/{id}', 'BrandsController@edit')->name('admin.brands.edit');
-            Route::PUT('update/{id}', 'BrandsController@update')->name('admin.brands.update');
-            Route::get('delete/{id}', 'BrandsController@delete')->name('admin.brands.delete');
+            Route::put('update/{id}', 'BrandsController@update')->name('admin.brands.update');
+            Route::delete('delete/{id}', 'BrandsController@delete')->name('admin.brands.delete');
         });
         ################################## end Brands    #######################################
+
+        ################################## Tags routes ######################################
+        Route::group(['prefix' => 'tags', 'Middleware'=> 'can:tags'], function () {
+            Route::get('/', 'TagsController@index')->name('admin.tags');
+            Route::get('create', 'TagsController@create')->name('admin.tags.create');
+            Route::put('store', 'TagsController@store')->name('admin.tags.store');
+            Route::get('edit/{id}', 'TagsController@edit')->name('admin.tags.edit');
+            Route::put('update/{id}', 'TagsController@update')->name('admin.tags.update');
+            Route::delete('delete/{id}', 'TagsController@delete')->name('admin.tags.delete');
+        });
+        ################################## end Tags #######################################
     });
 
     Route::group(['namespace'=>'App\Http\Controllers\Dashboard','middleware'=>'guest:admin', 'prefix'=>'admin'],function(){

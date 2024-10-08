@@ -8,9 +8,12 @@ edit Categories
 <div class="card">
     <h5 class="card-header">Edit Category</h5>
     <div class="card-body">
-      <form method="post" action="{{route('admin.maincategories.update',$category->id)}}">
+      <form
+        action="{{route('admin.maincategories.update',$category->id)}}"
+        method="POST"
+        enctype="multipart/form-data">
         @csrf
-        @method('PATCH')
+        @method('PUT')
         <div class="form-group">
           <label for="inputTitle" class="col-form-label">Title <span class="text-danger">*</span></label>
           <input id="inputTitle" type="text" name="name" placeholder="Enter title"  value="{{$category->name}}" class="form-control">
@@ -51,21 +54,7 @@ edit Categories
           </select>
         </div>
 
-        <div class="form-group">
-          <label for="inputPhoto" class="col-form-label">Photo</label>
-          <div class="input-group">
-              <span class="input-group-btn">
-                  <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
-                  <i class="fa fa-picture-o"></i> Choose
-                  </a>
-              </span>
-          <input id="thumbnail" class="form-control" type="text" name="photo" value="{{$category->photo}}">
-        </div>
-        <div id="holder" style="margin-top:15px;max-height:100px;"></div>
-          @error('photo')
-          <span class="text-danger">{{$message}}</span>
-          @enderror
-        </div>
+
 
         <div class="form-group">
           <label for="status" class="col-form-label">Status <span class="text-danger">*</span></label>
