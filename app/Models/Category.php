@@ -34,5 +34,9 @@ class Category extends Model
         return $this -> hasMany(Self::class,'parent_id');
     }
 
+    public function scopeActive($query){
+        return $query -> where('is_active',1);
+    }
+
 
 }

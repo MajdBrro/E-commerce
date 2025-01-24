@@ -37,9 +37,9 @@ Brands
                     <td>{{$brand->name}}</td>
                     <td>
                         @if($brand->is_active=='1')
-                            <span class="badge badge-success"> {{__('admin.available')}}</span>
+                            <span class="badge badge-success"> {{ __('admin.available') }}</span>
                         @else
-                            <span class="badge badge-danger">{{ __('admin.un_available')}}</span>
+                            <span class="badge badge-danger">{{ __('admin.un_available') }}</span>
                         @endif
                     </td>
                     <td> <img style="width: 150px; height: 100px;" src="{{ $brand->photo }}"></td>

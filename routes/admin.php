@@ -64,9 +64,9 @@ Route::group(
             Route::put('update/{id}', 'BrandsController@update')->name('admin.brands.update');
             Route::delete('delete/{id}', 'BrandsController@delete')->name('admin.brands.delete');
         });
-        ################################## end Brands    #######################################
+############################################################### end Brands    #######################################
 
-        ################################## Tags routes ######################################
+############################################################### Tags routes ######################################
         Route::group(['prefix' => 'tags', 'Middleware'=> 'can:tags'], function () {
             Route::get('/', 'TagsController@index')->name('admin.tags');
             Route::get('create', 'TagsController@create')->name('admin.tags.create');
@@ -75,7 +75,59 @@ Route::group(
             Route::put('update/{id}', 'TagsController@update')->name('admin.tags.update');
             Route::delete('delete/{id}', 'TagsController@delete')->name('admin.tags.delete');
         });
-        ################################## end Tags #######################################
+############################################################### end Tags #######################################
+############################################################### Products routes ######################################
+    Route::group(['prefix' => 'products', 'Middleware'=> 'can:products'], function () {
+    // ----------------------------------------------------------------------------------------------    
+        Route::get('/', 'ProductsController@index')->name('admin.products');
+    // ----------------------------------------------------------------------------------------------    
+        Route::get('create-general-information', 'ProductsController@create')->name('admin.products.general.create');
+        Route::put('store-general-information', 'ProductsController@store')->name('admin.products.general.store');
+        Route::get('edit-general-information/{id}', 'ProductsController@edit')->name('admin.products.general.edit');
+        Route::put('update-general-information', 'ProductsController@update')->name('admin.products.general.update');
+    // ----------------------------------------------------------------------------------------------    
+        Route::get('price/{id}', 'ProductsController@getPrice')->name('admin.products.price');
+        Route::put('price', 'ProductsController@saveProductPrice')->name('admin.products.price.store');
+    // ----------------------------------------------------------------------------------------------   
+        Route::get('stock/{id}', 'ProductsController@getStock')->name('admin.products.stock');
+        Route::put('stock', 'ProductsController@saveProductStock')->name('admin.products.stock.store'); 
+    // ---------------------------------------------------------------------------------------------- 
+        Route::get('images/{id}', 'ProductsController@addImages')->name('admin.products.images');
+        Route::post('images', 'ProductsController@saveProductImages')->name('admin.products.images.store');
+        Route::post('images/db', 'ProductsController@saveProductImagesDB')->name('admin.products.images.store.db');
+    // ---------------------------------------------------------------------------------------------- 
+        Route::delete('delete/{id}', 'ProductsController@delete')->name('admin.products.delete');        
+    });
+############################################################### Products routes ######################################
+        ################################## Products routes ######################################
+        //  Route::group(['prefix' => 'products', 'middleware' => 'can:products'], function () {
+        //     Route::get('/','ProductsController@index')->name('admin.products');
+        //     Route::get('general-information', 'ProductsController@create')->name('admin.products.general.create');
+        //     Route::post('store-general-information', 'ProductsController@store')->name('admin.products.general.store');
+        //     Route::get('delete/{id}', 'ProductsController@delete')->name('admin.products.delete');
+
+
+        //     Route::get('price/{id}', 'ProductsController@getPrice')->name('admin.products.price');
+        //     Route::post('price', 'ProductsController@saveProductPrice')->name('admin.products.price.store');
+
+        //     Route::get('stock/{id}', 'ProductsController@getStock')->name('admin.products.stock');
+        //     Route::match(['get', 'post'],'stock', 'ProductsController@saveProductStock')->name('admin.products.stock.store');
+
+        //     Route::get('images/{id}', 'ProductsController@addImages')->name('admin.products.images');
+        //     Route::post('images', 'ProductsController@saveProductImages')->name('admin.products.images.store');
+        //     Route::post('images/db', 'ProductsController@saveProductImagesDB')->name('admin.products.images.store.db');
+        // });
+        ################################## end Products    #######################################
+        ################################## Products routes ######################################
+        // Route::group(['prefix' => 'products', 'Middleware'=> 'can:products'], function () {
+        //     Route::get('/', 'ProductsController@index')->name('admin.products');
+        //     Route::get('create', 'ProductsController@create')->name('admin.products.create');
+        //     Route::put('store', 'ProductsController@store')->name('admin.products.store');
+        //     Route::get('edit/{id}', 'ProductsController@edit')->name('admin.products.edit');
+        //     Route::put('update/{id}', 'ProductsController@update')->name('admin.products.update');
+        //     Route::delete('delete/{id}', 'ProductsController@delete')->name('admin.products.delete');
+        // });
+        ################################## end Products    #######################################
     });
 
     Route::group(['namespace'=>'App\Http\Controllers\Dashboard','middleware'=>'guest:admin', 'prefix'=>'admin'],function(){

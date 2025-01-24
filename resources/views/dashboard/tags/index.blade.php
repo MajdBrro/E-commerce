@@ -42,7 +42,7 @@ Tags Index
                     @else
                         <span class="badge badge-danger">{{ __('admin.un_available')}}</span>
                     @endif
-                </td>
+                  </td>
                    <td>
                        <a href="{{route('admin.tags.edit',$tag->id)}}" class="btn btn-primary btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" tag-toggle="tooltip" title="edit" tag-placement="bottom"><i class="fas fa-edit"></i></a>
                    <form method="POST" action="{{route('admin.tags.delete',[$tag->id])}}">
@@ -53,7 +53,8 @@ Tags Index
                    </td>
                </tr>
             @endforeach
-            @endisset         </tbody>
+            @endisset         
+          </tbody>
        </table>
        <span style="float:right">{{$tags->links()}}</span>
        @else
