@@ -35,7 +35,7 @@ Create Brands
           @enderror
         </div>
 
-          <div class="form-group">
+        <div class="form-group">
             <label for="inputPhoto" class="col-form-label">Photo</label>
             <div class="input-group">
                 <span class="input-group-btn">

@@ -94,8 +94,8 @@
         <div id="productCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Product Options:</h6>
-            <a class="collapse-item" href="{{--route('product.index')--}}">Products</a>
-            <a class="collapse-item" href="{{--route('product.create')--}}">Add Product</a>
+            <a class="collapse-item" href="{{route('admin.products')}}">Products</a>
+            <a class="collapse-item" href="{{route('admin.products.general.create')}}">Add Product</a>
           </div>
         </div>
     </li>
@@ -112,6 +112,21 @@
             <a class="collapse-item" href="{{route('admin.brands')}}">Brands</a>
             <a class="collapse-item" href="{{route('admin.brands.create')}}">Add Brand</a>
           </div>
+        </div>
+    </li>
+
+    <!-- Tags -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#tagCollapse" aria-expanded="true" aria-controls="tagCollapse">
+            <i class="fas fa-tags fa-folder"></i>
+            <span>Tags</span>
+        </a>
+        <div id="tagCollapse" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Tag Options:</h6>
+            <a class="collapse-item" href="{{route('admin.tags')}}">Tag</a>
+            <a class="collapse-item" href="{{route('admin.tags.create')}}">Add Tag</a>
+            </div>
         </div>
     </li>
 
@@ -204,20 +219,7 @@
 
 
 
-      <!-- Tags -->
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#tagCollapse" aria-expanded="true" aria-controls="tagCollapse">
-            <i class="fas fa-tags fa-folder"></i>
-            <span>Tags</span>
-        </a>
-        <div id="tagCollapse" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Tag Options:</h6>
-            <a class="collapse-item" href="{{--route('post-tag.index')--}}">Tag</a>
-            <a class="collapse-item" href="{{--route('post-tag.create')--}}">Add Tag</a>
-            </div>
-        </div>
-    </li>
+
 
       <!-- Comments -->
       <li class="nav-item">

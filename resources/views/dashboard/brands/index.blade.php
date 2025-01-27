@@ -35,24 +35,22 @@ Brands
                 <tr>
                     <td>{{$brand->id}}</td>
                     <td>{{$brand->name}}</td>
-                    <td>{{$brand -> getActive()}}</td>
-                    <td> <img style="width: 150px; height: 100px;" src="{{ $brand->photo }}"></td>
-                    {{-- <td>
-                        @if($brand->status=='active')
-                            <span class="badge badge-success">{{$brand->status}}</span>
-                        @else
-                            <span class="badge badge-warning">{{$brand->status}}</span>
-                        @endif
-                    </td> --}}
                     <td>
-                        <div class="btn-group" role="group"
-                             aria-label="Basic example">
-                            <a href="{{route('admin.brands.edit',$brand -> id)}}"
-                               class="btn btn-outline-primary btn-min-width box-shadow-3 mr-1 mb-1">{{ __('admin.edit') }}</a>
+                        @if($brand->is_active=='1')
+                            <span class="badge badge-success"> {{ __('admin.available') }}</span>
+                        @else
+                            <span class="badge badge-danger">{{ __('admin.un_available') }}</span>
+                        @endif
+                    </td>
+                    <td> <img style="width: 150px; height: 100px;" src="{{ $brand->photo }}"></td>
 
-                            <a href="{{route('admin.brands.delete',$brand -> id)}}"
-                               class="btn btn-outline-danger btn-min-width box-shadow-3 mr-1 mb-1">{{ __('admin.delete') }}</a>
-                        </div>
+                    <td>
+                        <a href="{{route('admin.brands.edit',$brand->id)}}" class="btn btn-primary btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" tag-toggle="tooltip" title="edit" tag-placement="bottom"><i class="fas fa-edit"></i></a>
+                        <form method="POST" action="{{route('admin.brands.delete',[$brand->id])}}">
+                            @csrf
+                            @method('delete')
+                            <button class="btn btn-danger btn-sm dltBtn" tag-id={{$brand->id}} style="height:30px; width:30px;border-radius:50%" tag-toggle="tooltip" tag-placement="bottom" title="Delete"><i class="fas fa-trash-alt"></i></button>
+                        </form>
                     </td>
 
                 </tr>

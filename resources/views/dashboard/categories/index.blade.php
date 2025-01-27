@@ -43,34 +43,28 @@ main Categories
                             <span class="badge badge-danger">{{ __('admin.un_available')}}</span>
                         @endif
                     </td>
-                    {{-- <td> <img style="width: 150px; height: 100px;" src=" "></td> --}}
-                    {{-- <td>
-                        @if($category->photo)
-                            <img src="{{$category->photo}}" class="img-fluid" style="max-width:80px" alt="{{$category->photo}}">
-                        @else
-                            <img src="{{asset('backend/img/thumbnail-default.jpg')}}" class="img-fluid" style="max-width:80px" alt="avatar.png">
-                        @endif
-                    </td> --}}
+
+
                     <td>
-                    <a href="{{route('admin.maincategories.edit',$category->id)}}" class="btn btn-primary btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" title="edit" data-placement="bottom"><i class="fas fa-edit"></i></a>
-                    <form method="POST" action="{{route('admin.maincategories.delete',$category->id)}}">
-                      @csrf
-                      @method('PUT')
-                        <button class="btn btn-danger btn-sm dltBtn" data-id={{$category->id}} style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class="fas fa-trash-alt"></i></button>
-                    </form>
+                        <a href="{{route('admin.maincategories.edit',$category->id)}}" class="btn btn-primary btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" tag-toggle="tooltip" title="edit" tag-placement="bottom"><i class="fas fa-edit"></i></a>
+                        <form method="POST" action="{{route('admin.maincategories.delete',[$category->id])}}">
+                        @csrf
+                        @method('delete')
+                        <button class="btn btn-danger btn-sm dltBtn" tag-id={{$category->id}} style="height:30px; width:30px;border-radius:50%" tag-toggle="tooltip" tag-placement="bottom" title="Delete"><i class="fas fa-trash-alt"></i></button>
+                        </form>
                     </td>
                 </tr>
             @endforeach
           </tbody>
         </table>
-        {{-- <span style="float:right">$categories->links()</span> --}}
+        <span style="float:right">$categories->links()</span>
       </div>
     </div>
 </div>
 @endsection
 {{-- ############################################################################################################## --}}
 {{-- كود إضافي من المشروع الهندي لا أعرف ماذا يفعل--}}
-{{-- @push('styles')
+@push('styles')
   <link href="{{asset('backend/vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
   <style>
@@ -135,7 +129,7 @@ main Categories
           })
       })
   </script>
-@endpush --}}
+@endpush
 {{-- كود إضافي من المشروع الهندي لا أعرف ماذا يفعل--}}
 {{-- ############################################################################################################## --}}
 

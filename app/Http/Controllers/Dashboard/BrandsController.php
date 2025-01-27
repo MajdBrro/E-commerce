@@ -44,14 +44,17 @@ public function update(Request $request, $id){
 
     if($request -> has('photo')){
         $filename=uploadImage('brands',$request->photo);
-    }
+            $brands->update([
+                'photo'=> $filename,
+            ]);
+        }
 
-    $brands->update([
-        'is_active' => $request -> status == 1 ? "1" : "0",
-        'photo'=> $filename,
-    ]);
-    $brands -> name = $request -> name;// يونيك name هنا يوجد ملاحظة انو الباكج نفسها تعتبر ال
-    // $brands -> slug  = str_replace(' ', '-', $request -> name);
+
+        $brands->update([
+            'is_active' => $request -> status == 1 ? "1" : "0",
+        ]);
+        $brands -> name = $request -> name;// يونيك name هنا يوجد ملاحظة انو الباكج نفسها تعتبر ال
+
     $brands -> save();
     return redirect()->route('admin.brands') -> with(['success' => 'it was done successful']);
 
