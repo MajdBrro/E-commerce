@@ -71,13 +71,27 @@
       </div>
   </li>
   <!-- SubCategory -->
+  {{-- Brands --}}
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#brandCollapse" aria-expanded="true" aria-controls="brandCollapse">
+      <i class="fas fa-table"></i>
+      <span>Brands</span>
+    </a>
+    <div id="brandCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+      <div class="bg-white py-2 collapse-inner rounded">
+        <h6 class="collapse-header">Brand Options:</h6>
+        <a class="collapse-item" href="{{route('admin.brands')}}">Brands</a>
+        <a class="collapse-item" href="{{route('admin.brands.create')}}">Add Brand</a>
+      </div>
+    </div>
+</li>
 
   <li class="nav-item">
-      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#postCategoryCollapse" aria-expanded="true" aria-controls="postCategoryCollapse">
+      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#subCategoryCollapse" aria-expanded="true" aria-controls="postCategoryCollapse">
         <i class="fas fa-sitemap fa-folder"></i>
         <span>SubCategory</span>
       </a>
-      <div id="postCategoryCollapse" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+      <div id="subCategoryCollapse" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header">Sub Category Options:</h6>
           <a class="collapse-item" href="{{--route('post-category.index')--}}">SubCategory</a>
@@ -99,21 +113,36 @@
           </div>
         </div>
     </li>
-
-    {{-- Brands --}}
+    {{-- Attributes --}}
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#brandCollapse" aria-expanded="true" aria-controls="brandCollapse">
-          <i class="fas fa-table"></i>
-          <span>Brands</span>
-        </a>
-        <div id="brandCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Brand Options:</h6>
-            <a class="collapse-item" href="{{route('admin.brands')}}">Brands</a>
-            <a class="collapse-item" href="{{route('admin.brands.create')}}">Add Brand</a>
-          </div>
+      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#attributeCollapse" aria-expanded="true" aria-controls="productCollapse">
+        <i class="fas fa-cubes"></i>
+        <span>Attributes</span>
+      </a>
+      <div id="attributeCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+          <h6 class="collapse-header">Attribute :</h6>
+          <a class="collapse-item" href="{{route('admin.attributes')}}">Attributes</a>
+          <a class="collapse-item" href="{{route('admin.attributes.create')}}">Add Attribute</a>
         </div>
-    </li>
+      </div>
+  </li>
+    {{-- options --}}
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#optionCollapse" aria-expanded="true" aria-controls="productCollapse">
+        <i class="fas fa-cubes"></i>
+        <span>Options</span>
+      </a>
+      <div id="optionCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+          <h6 class="collapse-header"> Options:</h6>
+          <a class="collapse-item" href="{{route('admin.options')}}">Options</a>
+          <a class="collapse-item" href="{{route('admin.options.create')}}">Add Options</a>
+        </div>
+      </div>
+  </li>
+
+    
 
     <!-- Tags -->
     <li class="nav-item">
