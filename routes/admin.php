@@ -119,13 +119,15 @@ Route::group(
     Route::PUT('update/{id}', 'OptionsController@update')->name('admin.options.update');
 });
 ################################## end options    #######################################
-    });
+});
 
-    Route::group(['namespace'=>'App\Http\Controllers\Dashboard','middleware'=>'guest:admin', 'prefix'=>'admin'],function(){
+// Route::group(['namespace'=>'App\Http\Controllers\Dashboard','middleware'=>'guest:admin', 'prefix'=>'admin'],function(){
 
-        Route::get('login','LoginController@login') -> name('admin.login');
-        Route::post('savelogin' , 'LoginController@checkAdminLogin')-> name('save.admin.login');
-    });
+//     Route::get('login','LoginController@login') -> name('admin.login');
+//     Route::post('savelogin' , 'LoginController@checkAdminLogin')-> name('save.admin.login');
+// });
+
+
 
 });
 
