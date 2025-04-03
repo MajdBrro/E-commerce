@@ -103,6 +103,11 @@ class Product extends Model
         return $this->belongsToMany(Image::class, 'product_images');
     }
 
+    public function options()
+    {
+        return $this->hasMany(Option::class, 'product_id');
+    }
+
    
 
 

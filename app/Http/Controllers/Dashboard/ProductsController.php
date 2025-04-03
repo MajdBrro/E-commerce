@@ -204,7 +204,7 @@ public function saveProductImagesDB(Request $request){
 public function delete($id)
 {
 
-    try {
+
         //get specific categories and its translations
         $product = Product::findOrfail($id);
 
@@ -215,10 +215,7 @@ public function delete($id)
 
         return redirect()->route('admin.products')->with(['success' => 'تم  الحذف بنجاح']);
 
-    } catch (\Exception $ex) {  
-        \log::error($ex->getMessage()); // Log the error message for debugging  
-        return redirect()->route('admin.products')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
-    }
+
 
 }
 
